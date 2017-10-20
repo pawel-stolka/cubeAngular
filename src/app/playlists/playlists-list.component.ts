@@ -10,21 +10,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
     <p>fru!</p>
   `,
   encapsulation: ViewEncapsulation.Emulated,
-  styles: [`
-  :host() {
-    border: 1px solid red;
-    display: block;
-  }
-
-  :host(.class-from-parent){
-    background : blue;
-  }
-
-    :host() ::ng-deep p{
-      color: hotpink;
-    }
-    `
-  ]
+  styles: []
 })
 export class PlaylistsListComponent implements OnInit {
 
