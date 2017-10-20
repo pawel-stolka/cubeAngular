@@ -69,7 +69,7 @@ cancel(event) {
 }
 
 save(event) {
-  this.mode = 'edit';
+  this.mode = 'show';
   console.log("saved!", event);
 }
 
