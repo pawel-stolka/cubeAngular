@@ -3,6 +3,11 @@ npmjs.com:
 
 ng help
 	new
+	serve 
+	generate component
+	
 
     polyfill - uncomment stare browsers
+
+
 	

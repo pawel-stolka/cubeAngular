@@ -18,7 +18,4 @@ counter = 0;
     }, 500);
   }
 
-  data = {
-    message: 'jestem cool'
-  };
 }
