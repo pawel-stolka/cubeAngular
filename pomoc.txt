@@ -1,0 +1,6 @@
+npmjs.com:
+	http-server
+
+ng help
+	new
+	
