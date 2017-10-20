@@ -27,7 +27,9 @@ interface Playlist {
           {{ playlist.color }}
       </div>
   </div>
+  <button class="btn btn-success" (click)="edit($event)" >Edit</button>
 </div>
+
 <div>
   <div class="form-group">
     <label>Name</label>
@@ -44,10 +46,19 @@ interface Playlist {
     <input type="color" [value]="playlist.color"
       [(ngModel)]="playlist.color">
 </div>
-<button (click)="save($event)" >Save</button>
+<button class="btn btn-success" (click)="save($event)" >Save</button>
+<button class="btn btn-danger" (click)="cancel($event)" >Cancel</button>
 `, styles: []
 })
 export class PlaylistDetailsComponent implements OnInit {
+
+edit(event) {
+  console.log("editted!", event);
+}
+
+cancel(event) {
+  console.log("cancelled!", event);
+}
 
 save(event) {
   console.log("saved!", event);
