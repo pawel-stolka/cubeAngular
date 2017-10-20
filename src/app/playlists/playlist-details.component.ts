@@ -32,20 +32,17 @@ interface Playlist {
   <div class="form-group">
     <label>Name</label>
     <input class="form-control"
-        (ngModelChange)=" playlist.name = $event "
-        [ngModel]="playlist.name">
+        [(ngModel)]="playlist.name">
   </div>
   <div class="form-group">
     <label>Favourite</label>
     <input type="checkbox" class="form-control"
-      (ngModelChange)=" playlist.favourite = $event "
-      [ngModel]="playlist.favourite">
+      [(ngModel)]="playlist.favourite">
   </div>
   <div class="form-group">
     <label>Color</label>
     <input type="color" [value]="playlist.color"
-      (ngModelChange)=" playlist.color = $event"
-      [ngModel]="playlist.color">
+      [(ngModel)]="playlist.color">
 </div>
 <button (click)="save($event)" >Save</button>
 `, styles: []
