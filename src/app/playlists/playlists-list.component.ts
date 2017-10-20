@@ -5,11 +5,16 @@ import {Playlist } from './playlist';
   selector: 'playlists-list',
   template: `
     <ul class="list-group">
-      <li *ngFor="let playlist of playlists; let i=index" class="list-group-item">
+      <li *ngFor="let playlist of playlists; let i=index" 
+        (click)="selected = playlist"
+        [class.active]=" selected == playlist"
+
+        class="list-group-item">
         {{i+1 }}. {{playlist.name}}
       </li>
     </ul>
 
+    {{selected?.name}}
     
   `,
   encapsulation: ViewEncapsulation.Emulated,
@@ -17,6 +22,8 @@ import {Playlist } from './playlist';
 })
 
 export class PlaylistsListComponent implements OnInit {
+
+selected: Playlist;
 
   playlists: Playlist[] = [
     {
