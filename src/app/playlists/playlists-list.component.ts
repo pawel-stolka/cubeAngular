@@ -7,7 +7,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
       playlists-list works!
     </p>
     <playlist-item ></playlist-item>
-    <p>fru!</p>
+    
   `,
   encapsulation: ViewEncapsulation.Emulated,
   styles: []
