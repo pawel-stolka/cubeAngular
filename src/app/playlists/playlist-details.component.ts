@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Playlist {
-  id: number;
-  name: string;
-  favourite: boolean;
-  color: string;
-  // tracks: []
-}
+import { Playlist } from './playlist';
 
 
 @Component({
