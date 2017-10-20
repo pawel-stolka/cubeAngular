@@ -5,11 +5,11 @@ import {Playlist } from './playlist';
   selector: 'playlists-list',
   template: `
     <ul class="list-group">
-      <li *ngFor="let playlist of playlists" class="list-group-item">
-        {{playlist.name}}
+      <li *ngFor="let playlist of playlists; let i=index" class="list-group-item">
+        {{i+1 }}. {{playlist.name}}
       </li>
     </ul>
-  <playlist-item ></playlist-item>
+
     
   `,
   encapsulation: ViewEncapsulation.Emulated,
