@@ -47,9 +47,14 @@ interface Playlist {
       (change)=" playlist.color = $event.target.value"
       [value]="playlist.color">
 </div>
+<button (click)="save($event)" >Save</button>
 `, styles: []
 })
 export class PlaylistDetailsComponent implements OnInit {
+
+save(event) {
+  console.log("saved!", event);
+}
 
   playlist: Playlist = {
     id: 1,
