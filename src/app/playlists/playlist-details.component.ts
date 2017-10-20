@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'; 
+import { Component, OnInit } from '@angular/core';
 
 interface Playlist {
   id: number;
@@ -9,34 +9,37 @@ interface Playlist {
 }
 
 
-@Component({ 
-  selector: 'playlist-details', 
-template: `
+@Component({
+  selector: 'playlist-details',
+  template: `
 <div>
-    <div class="form-group">
-        <label>Name</label>
-        <div class="form-control-static" > {{ playlist.name }} </div>
-    </div>
-    <div class="form-group">
+  <div class="form-group">
+      <label>Name</label>
+      <div class="form-control-static"> {{ playlist.name }} </div>
+  </div>
+  <div class="form-group">
       <label>Favourite</label>
-      <div class="form-control-static" >{{ playlist.favourite ? 'YES' : 'NO' }} </div>
-    </div>
-    <div class="form-group">
+      <div class="form-control-static">{{ playlist.favourite ? 'YES' : 'NO' }} </div>
+  </div>
+  <div class="form-group">
       <label>Color</label>
-      <div class="form-control-static" > {{ playlist.color }} </div>
-    </div>
+      <div class="form-control-static" [style.backgroundColor]=" playlist.color ">
+          {{ playlist.color }}
+      </div>
+  </div>
 </div>
-`, styles: [] }) 
-export class PlaylistDetailsComponent implements OnInit { 
+`, styles: []
+})
+export class PlaylistDetailsComponent implements OnInit {
 
   playlist: Playlist = {
     id: 1,
     name: "Angular rules",
     color: '#2200ff',
-    favourite: false
+    favourite: true
   }
 
-  constructor() { } 
+  constructor() { }
 
-  ngOnInit() { } 
+  ngOnInit() { }
 }
