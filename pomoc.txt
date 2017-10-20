@@ -10,4 +10,9 @@ ng help
     polyfill - uncomment stare browsers
 
 
+obserwator handler:
+$0.addEventListener('input', function(event){ console.log(event.target.value); })
+
+
+
 	
