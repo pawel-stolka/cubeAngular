@@ -12,26 +12,30 @@ interface Playlist {
 @Component({
   selector: 'playlist-details',
   template: `
-<div>
+
+<div *ngIf="mode == 'show' ">
   <div class="form-group">
       <label>Name</label>
       <div class="form-control-static"> {{ playlist.name }} </div>
   </div>
+
   <div class="form-group">
       <label>Favourite</label>
       <div class="form-control-static">{{ playlist.favourite ? 'YES' : 'NO' }} </div>
   </div>
+
   <div class="form-group">
       <label>Color</label>
       <div class="form-control-static" [style.backgroundColor]=" playlist.color ">
           {{ playlist.color }}
       </div>
   </div>
-  <button class="btn btn-success" (click)="edit($event)" >Edit</button>
-</div>
 
-<div>
-  <div class="form-group">
+  <button class="btn btn-success" (click)="edit($event)" >Edit</button>
+  </div>
+
+<div *ngIf="mode == 'edit' ">
+  <div  class="form-group">
     <label>Name</label>
     <input class="form-control"
         [(ngModel)]="playlist.name">
@@ -52,15 +56,20 @@ interface Playlist {
 })
 export class PlaylistDetailsComponent implements OnInit {
 
+mode = 'show'
+
 edit(event) {
+  this.mode = 'edit';
   console.log("editted!", event);
 }
 
 cancel(event) {
+  this.mode = 'show';
   console.log("cancelled!", event);
 }
 
 save(event) {
+  this.mode = 'edit';
   console.log("saved!", event);
 }
 
