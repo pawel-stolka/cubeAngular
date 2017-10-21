@@ -5,25 +5,14 @@ import { Playlist} from './playlist';
 <div class="row">
 <div class="col">
     <playlists-list 
-    (selectedChange) = "selected = $event"
-    [selected]="selected"
+    [(selected)]="selected"
     [playlists]="playlists"></playlists-list>
 </div>
 <div class="col">
     <playlist-details [playlist]="selected"></playlist-details>
 </div>
 </div>
-<div class="row">
-<div class="col">
-    <playlists-list 
-    (selectedChange) = "selected = $event"
-    [selected]="selected"
-    [playlists]="playlists"></playlists-list>
-</div>
-<div class="col">
-    <playlist-details [playlist]="selected"></playlist-details>
-</div>
-</div>
+
 
 `, styles: [] }) 
 
