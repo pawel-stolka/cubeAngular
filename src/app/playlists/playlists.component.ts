@@ -4,7 +4,10 @@ import { Playlist} from './playlist';
 @Component({ selector: 'playlists', template: ` 
 <div class="row">
 <div class="col">
-    <playlists-list [playlists]="playlists"></playlists-list>
+    <playlists-list 
+    (selectedChange) = "selected = $event"
+    [selected]="selected"
+    [playlists]="playlists"></playlists-list>
 </div>
 <div class="col">
     <playlist-details [playlist]="selected"></playlist-details>
