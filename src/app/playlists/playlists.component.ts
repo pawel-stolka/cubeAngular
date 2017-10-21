@@ -7,14 +7,14 @@ import { Playlist} from './playlist';
     <playlists-list [playlists]="playlists"></playlists-list>
 </div>
 <div class="col">
-    <playlist-details></playlist-details>
+    <playlist-details [playlist]="selected"></playlist-details>
 </div>
 </div>
 `, styles: [] }) 
 
 export class PlaylistsComponent implements OnInit { 
-  constructor() { }
 
+  
   selected:Playlist;
 
   playlists:Playlist[] = [
@@ -37,5 +37,10 @@ export class PlaylistsComponent implements OnInit {
         favourite: false
       }
   ]
+
+  constructor() { 
+    this.selected = this.playlists[0];
+}
+
    ngOnInit() { } 
 }

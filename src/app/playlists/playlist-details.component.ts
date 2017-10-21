@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Playlist } from './playlist';
 
 
@@ -49,6 +49,9 @@ import { Playlist } from './playlist';
 })
 export class PlaylistDetailsComponent implements OnInit {
 
+  @Input()
+  playlist:Playlist
+
 mode = 'show'
 
 edit(event) {
@@ -66,12 +69,6 @@ save(event) {
   console.log("saved!", event);
 }
 
-  playlist: Playlist = {
-    id: 1,
-    name: "Angular rules",
-    color: '#2200ff',
-    favourite: true
-  }
 
   constructor() { }
 
