@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import {Playlist } from './playlist';
 
 @Component({
@@ -25,27 +25,8 @@ export class PlaylistsListComponent implements OnInit {
 
 selected: Playlist;
 
-  playlists: Playlist[] = [
-    {
-      id: 1,
-      name: 'Angular',
-      color: '#FF0044',
-      favourite: false
-    },
-    {
-      id: 2,
-      name: 'Angular infinite',
-      color: '#00FF44',
-      favourite: false
-    },
-    {
-      id: 3,
-      name: 'Angular kaput',
-      color: '#110044',
-      favourite: false
-    }
-  ]
-
+  @Input('playlists')
+  playlists: Playlist[] = []
 
   constructor() { }
 
